@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ko">
+    <head> 
+        <meta charset="utf-8">
+        <meta property="og:url" content="http://gra.dothome.co.kr/a01/">
+        <meta property="og:title" content="김소형의 포트폴리오">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="" href="img/mymy_02.jpg"> <!-- 미리보기 이미지하나 제작 -->
+        <meta property="og:description" content="안녕하세요. 김소형입니다. ">
+        <title>김소형의 포트폴리오</title>
+        <link rel="shortcut icon" type="image/png" sizes="16x16" href="favicon.png"> 
+        <link rel="stylesheet" href="css/font_score.css">
+        <link rel="stylesheet" href="css/style.css?v3">
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="popup">
+                <div class="p_notice">
+                    본 사이트는 상업적 목적이 아닌 개인 포트폴리오 용도로 제작되었으며,<br>
+                    <span>Chrome 브라우저 (너비 1400px 이상)에<br>
+                        최적화되어 있습니다.</span><br>
+                    홈페이지 일부 내용과 기타 이미지등은<br>
+                    출처가 따로 있음을 밝힙니다.
+                </div>
+            </div>    
+            <section class="sect01 seciton">
+                <div class="box1">
+                    <img src="" alt="">
+                </div> 
+            </section> <!-- 1번 섹션 .seciton.sect01 -->
+            <section class="sect02 seciton">
+                <div class="box2">
+                    <img src="img/myinfo_02.png" alt="">
+                </div>
+            </section> <!-- 2번 섹션 .seciton.sect02 -->
+            <section class="sect03">
+                <div class="box3">
+                    <h2>WORK</h2>
+                    <div class="box3List">
+                        <!-- 1번 줄 -->
+                        <ul>
+                            <li>
+                                <a href="project_01/index_2.html" target="_blank">
+                                    <img src="img/mac_head.jpg" alt="">
+                                </a>
+                            </li>
+                            <li><a href="project_04/full_project_04.html" target="_blank">
+                                    <img src="img/bear_main.jpg" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="project_05/full_project_05.html" target="_blank">
+                                    <img src="img/uxui_main.jpg" alt="">
+                                </a>
+                            </li>
+                            <li><img src="img/bn_comboo.jpg" alt=""></li>
+                            <li><img src="img/iu_zigzag.png" alt=""></li>
+                            
+                        </ul>
+                        <!-- 2번 줄 -->
+                        <ul>
+                            <li>
+                                <a href="https://www.youtube.com/@user-gm5xu2ox9o" target="_blank">
+                                    <img src="img/vidio.jpg" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="project_02/full_project_02.html" target="_blank">
+                                    <img src="img/bn_vitafau.png" alt="">
+                                </a>
+                            </li>
+                            <li><img src="img/bn_dr..jpg" alt=""></li>
+                            <li><img src="img/bn_chu.jpg" alt=""></li>
+                        </ul>
+                        <!-- 3번 줄 -->
+                        <ul>
+                            <li>
+                                <a href="project_03/full_project_03.html" target="_blank">
+                                    <img src="img/dd_00.jpg" alt="">
+                                </a>
+                            </li>
+                            <li><img src="img/asiana_01.jpg" alt=""></li>
+                            <li><img src="img/app.jpg" alt=""></li>
+                            <li><img src="img/sida.jpg" alt=""></li>
+                        </ul>
+                    </div> <!-- .box3List -->
+                </div>
+            </section>
+            <div class="goTop"><a href="">TOP</a></div> <!-- 3번 섹션 .seciton.sect03 -->
+        </div> <!-- #wrap -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+            $(".seciton").each(function () {
+                $(this).on("mousewheel DOMMouseScroll", function (e) {
+                    e.preventDefault();
+                    var delta = 0;
+                    if (!event) event = window.event;
+                    if (event.wheelDelta) {
+                        delta = event.wheelDelta / 50;
+                        if (window.opera) delta = -delta;
+                    } else if (event.detail) delta = -event.detail / 3;
+                    var moveTop = null;
+                    if (delta < 0) {
+                        if ($(this).next() != undefined) {
+                            moveTop = $(this).next().offset().top;
+                        }
+                    } else {
+                        if ($(this).prev() != undefined) {
+                            moveTop = $(this).prev().offset().top;
+                        }
+                    }
+                    $("html,body").stop().animate({
+                        scrollTop: moveTop + 'px'
+                    }, {
+                        duration: 800, complete: function () {
+                        }
+                    });
+                });
+            });    
+            $('.goTop').click(function(){
+                $('body, html').stop().animate({
+                    scrollTop : 0
+                }, 800);
+                return false;
+            });
+        </script>
+    </body>
+</html>
